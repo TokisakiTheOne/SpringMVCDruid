@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<table class="table">
+    <tbody>
+    <tr align="center">
+        <td>编号</td>
+        <td>姓名</td>
+        <td>操作</td>
+    </tr>
+    <tr align="center" th:each="stu:${stus}">
+        <td th:text="${stu.id}"></td>
+        <td th:text="${stu.name}"></td>
+        <td>
+            <a th:href="@{/delete(id=${stu.id})}">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
